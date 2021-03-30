@@ -52,9 +52,7 @@ def prt_log(my_list):
         file.write(json.dumps(my_list))
 
 # Ask user to select from equation options
-print ("This application will output 5 different sets of changes in the size of a 3 dimensional object over time.")
-print ("You will be able to choose between an equation for a sphere of varying radius or a rectangular prism of varying dimensions.")
-print ("These equations will vary over time based off the options chosen for the change in time and dimension(s).\n")
+print ("This application will output 3 different sets of changes in the size of a 3-dimensional object over time.\nYou will be able to choose between an equation for a sphere or a rectangular prism and choose both their intial dimensions and their rate of change from one iteration to the next.\nEach of the 3 iterations for that chosen shape will provide a different set of 4-D data with multiple sets comprising a fifth dimension.\nThese values are reported without unit as the math remains the same no matter which unit is assigned to it.\nFeel free to assign whatever units you wish keeping in mind that Surface Area will be that unit squared and Volume will be that unit cubed.\n")
 
 # Add in loop to allow user to quit at any time.
 print ("You may continue as long as you wish or enter 'q' to quit the application.\n")
@@ -82,12 +80,12 @@ while True:
             prt_log(sphere_dict)
             print("\n")
             print(sphere_dict)
-            print("\nYou will also see these results in the file '5d_results.py' in your folder where they have been saved for future use.\nNew results will be appended to the end of the file each time you run this loop.\n")
+            print("\nYou will also see these results in the file '5d_results.txt' in your folder where they have been saved for future use.\nNew results will be appended to the end of the file each time you run this loop.\n")
             i += 1
         
     elif equation == "2":
         i = 1
-        while i < 2:
+        while i < 4:
             print ("\nFor a rectangular prism, please choose the intial value of each side (x, y, z) and the change of each of these values.")
             x_length = input("\nWhat is the initial length (x) for the prism?  ")
             dx = input("\nWhat is the change in x (delta x) after each iteration?  ")
@@ -100,8 +98,9 @@ while True:
                 r_prism(x_length, dx, y_width, dy, z_height, dz)
             except ValueError:
                 print("\nPlease enter numeric (integer or float) values only.")
+                continue
             prt_log(prism_dict)
             print("\n")
             print(prism_dict)
-            print("\nYou will also see these results in the file '5d_results.py' in your folder where they have been saved for future use.\nNew results will be appended to the end of the file each time you run this loop.\n")
+            print("\nYou will also see these results in the file '5d_results.txt' in your folder where they have been saved for future use.\nNew results will be appended to the end of the file each time you run this loop.\n")
             i += 1
