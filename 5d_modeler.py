@@ -65,7 +65,7 @@ while True:
         print("\nThanks for testing my app!")
         break
 
-    if equation == "1":
+    elif equation == "1":
         i = 1
         while i < 4:
             radius = input("\nPlease enter the initial radius you would like to use.  ")
